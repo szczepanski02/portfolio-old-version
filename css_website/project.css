@@ -1,0 +1,53 @@
+#project {
+  height: 70vh;
+  background-attachment: fixed;
+}
+
+.websites-item-first,
+.websites-item-third {
+  background: url('../imgs/pattern.png');
+}
+
+.img-item img {
+  border: 5px solid transparent;
+  border-radius: 20px;
+  transition: 200ms ease;
+  -webkit-transition: 200ms ease;
+  -moz-transition: 200ms ease;
+  -o-transition: 200ms ease;
+}
+
+.img-item img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .about_my_job {
+    margin-top: 30vh !important;
+  }
+
+  .header-content-text {
+    padding-top: 80px;
+  }
+
+  .header-content-photo {
+    padding-top: 70px;
+  }
+
+  .contact-link-text a {
+    margin-top: 20px !important;
+  }
+
+  .row .contact-link-photo {
+    padding-top: 0px !important;
+  }
+
+  .text-item {
+    padding-top: 40px !important;
+  }
+
+  .text-item p {
+    text-align: center !important;
+  }
+}

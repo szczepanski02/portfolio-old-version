@@ -1,0 +1,40 @@
+#contact {
+  height: 70vh;
+  background-attachment: fixed;
+}
+
+.advantages {
+  background: url('../imgs/pattern.png');
+}
+
+@media (max-width: 768px) {
+  .about_my_job {
+    margin-top: 30vh !important;
+  }
+
+  .header-content-text {
+    padding-top: 80px;
+  }
+
+  .header-content-photo {
+    padding-top: 70px;
+  }
+
+  .head-padding .advantages {
+    margin-top: 250px !important;
+  }
+
+  .header-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form-section .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  p.font-width-size {
+    font-size: 18px !important;
+  }
+}

@@ -1,0 +1,15 @@
+#last_project {
+    height: 80vh;
+    background-attachment: fixed;
+}
+.last-project-backroom {
+    background: url('../imgs/pattern.png');
+}
+@media (max-width: 768px) {
+    .row .services-two {
+        margin-top: 50px;
+    }
+    .header-content-photo img {
+        padding-top: 50px;
+    }
+}

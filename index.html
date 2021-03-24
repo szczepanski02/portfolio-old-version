@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG META -->
+    <meta property="og:title" content="Radosław Szczepański Web Developer" />
+    <meta property="og:description" content="Designing responsive and modern websites based on high-quality code." />
+    <meta property="og:url" content="https://www.rszczepanski.pl/" />
+    <meta property="og:image:secure_url" content="https://www.rszczepanski.pl/imgs/og/fb-banner.jpg" />
+    <meta property="og:image" content="https://www.rszczepanski.pl/imgs/og/fb-banner.jpg" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <title>Radosław Szczepański - WebDEV</title>
+    <meta name="description" content="Portfolio webowe">
+    <meta name="keywords" content="portfolio, webdesigner, strony, wordpress, html">
+    <meta name="author" content="Radosław Szczepański">
+
+    <!-- CSS FILES -->
+    <link href="css_website/style.css" rel="stylesheet" type="text/css" />
+    <link href="css_website/img-hover.css" rel="stylesheet" type="text/css" />
+
+    <!-- AJAX -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- FONTS font-family: 'Hind', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- FORM STATUS -->
+    <script>
+        $(document).ready(function() {
+            $("html").on("submit", "#contact_form", function(e) {
+                e.preventDefault();
+                $("#send_form_status").html('').hide();
+                var data = $("#contact_form").serialize();
+                $.post("send_form.php", data, function(res) {
+                    $("#send_form_status").html(res.msg).show();
+                    if (res.status == 1) {
+                        $("#contact_form")[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <header id="main" class="d-flex justify-content-center">
+        <!--                     NAVBAR                     -->
+        <nav class="navbar navbar-default navbar-expand-md navbar-dark fixed-top">
+            <div class="container">
+                <img id="logo-white" src="imgs/logo-white.png" alt="logo" width="40px" height="40px" href="#" />
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon navbar-dark"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link active" href="#">Strona główna</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link pl-5" href="offer.html">Oferta</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link pl-5" href="projects.html">Moje projekty</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link pl-5 disabled" href="github.html">Github</a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link pl-5" href="contact.html">Kontakt</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto lang-changer-padding">
+                        <li class="lang-changer lang-fr pl-5">
+                            <a class="nav-link mr-3" href="#">PL</a>
+                        </li>
+                        <li class="lang-changer lang-sec">
+                            <a class="nav-link mr-5" href="#">EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--                     HEADER CONTENT                     -->
+        <div class="header-content my-auto d-flex justify-content-center">
+            <div class="container">
+                <div class="row">
+                    <div class="header-content-text col-md-6 my-auto">
+                        <h1 style="font-size: 68px;">Radosław Szczepański</h1>
+                        <p style="font-size: 26px; opacity: 0.8; color: #ff4f5a;">Zapraszam do zapoznania się z moją działalnością</p>
+                        <a href="#contact-section-scroll" class="header-button btn btn-primary py-2 my-4" style="letter-spacing: 1px;">Skontaktuj się ze mną</a>
+                    </div>
+                    <div class="header-content-photo col-md-6 my-auto">
+                        <img src="imgs/bg_photo.jpg" alt="obrazek tła" width="90%" alt="Zdjęcie główne, webdeveloper, webdesigner, designer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--                     ABOUT ME PROLOG                     -->
+    <div class="about_me p-5 text-center">
+        <div class="container">
+            <p class="mb-0" style="opacity:0.8; font-size: 22px; color: #ff4f5a;">Dowiedz się dlaczego warto ze mną nawiązać współpracę</p>
+            <h1 class="pb-3" style="font-size: 58px;">O mnie</h1>
+            <p class="mobile-about-me text-justify" style="font-size: 22px; opacity: 0.8;">Od 6 lat projektuję strony internetowe. Traktuję to jako hobby i widzę w tym swoją przyszłość. Każdy mój projekt jest wykonany ze starannością, przy wykorzystaniu zdobytych przeze mnie umiejętności. Mogę stworzyć dla Ciebie prostą stronę w
+                formie wizytówki lub bardziej rozbudowaną w oparciu o WordPressa. Ze względu na specjalizację w dziedzinie fornt-endu zajmuję się również grafiką.</p>
+        </div>
+    </div>
+
+    <!--                     SECTION ABOUT CODES                     -->
+    <div class="section_codes">
+        <div class="container">
+            <div class="section_code_header pt-5 text-center">
+                <div data-aos="zoom-in">
+                    <h1 class="pt-5">Na czym bazuję?</h1>
+                    <p style="font-size: 20px; color: #ff4f5a;">Korzystam z czterech języków webowych, które umożliwiają mi stworzenie innowacyjnej i funkcjonalnej strony internetowej.</p>
+                </div>
+            </div>
+            <div class="row py-5 justify-content-center text-center">
+                <div class="card mx-3 mb-3 mb-5" style="width: 18rem;">
+                    <img src="imgs/blocks-index/html.jpg" class="card-img-top" height="160px" alt="html, webdeveloper, code, front-end">
+                    <div class="card-body">
+                        <div data-aos="zoom-in" data-aos-delay="200">
+                            <h5 class="card-title">HTML</h5>
+                            <p class="card-text">HTML (Hypertext Markup Language) jest język skryptowy używany do tworzenia struktury strony.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mx-3 mb-3 mb-5" style="width: 18rem;">
+                    <img src="imgs/blocks-index/js.jpg" class="card-img-top" height="160px" alt="javascript, js, front-end, website">
+                    <div class="card-body">
+                        <div data-aos="zoom-in" data-aos-delay="400">
+                            <h5 class="card-title">JS</h5>
+                            <p class="card-text">JavaScript jest to język skryptowy, który nadaje interaktywne funkcje do Twojej witryny.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mx-3 mb-3 mb-5" style="width: 18rem;">
+                    <img src="imgs/blocks-index/php.jpg" class="card-img-top" height="160px" alt="php, mysql, back-end, it">
+                    <div class="card-body">
+                        <div data-aos="zoom-in" data-aos-delay="800">
+                            <h5 class="card-title">PHP</h5>
+                            <p class="card-text">PHP jest to język skryptowy zaprojektowany do budowania aplikacji wykonywanych na serwerze.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     CAROUSELE                     -->
+    <div class="carousele pt-5" style="align-items: center; text-align: center;">
+        <div class="container px-5">
+            <div class="row justify-content-around">
+                <div class="text_about_photos col-lg-5 align-self-center">
+                    <div data-aos="zoom-in" data-aos-delay="300">
+                        <h1 class="pb-3" style="border-bottom: 5px dashed rgba(255,79,90,0.7); border-radius: 10px 0px 1px 0px;">Estetyczne wizytówki</h1>
+                        <p class="pt-3">Dzięki mojemu doświadczeniu portafię zbudować interaktywne i nowoczesne layout'y stron internetowych, które przyciągają uwagę potencjalnego klienta.</p>
+                        <a href="projects.html" class="btn dark-button mb-5" style="letter-spacing: 1px;">Zobacz moje projekty!</a>
+                    </div>
+                </div>
+
+                <div class="carousel_photos col-lg-7 align-self-center mb-5">
+                    <div id="carouselExampleControls" class="carousel slide border-box-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div data-aos="zoom-in" data-aos-delay="200">
+                                <div class="carousel-item active">
+                                    <img src="imgs/carousele/4.jpg" class="d-block w-100" alt="modern webistes, high qulity, quality code">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="imgs/carousele/2.jpg" class="d-block w-100" alt="modern webistes, high qulity, quality code">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="imgs/carousele/5.jpg" class="d-block w-100" alt="modern webistes, high qulity, quality code">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="imgs/carousele/6.jpg" class="d-block w-100" alt="modern webistes, high qulity, quality code">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="imgs/carousele/7.jpg" class="d-block w-100" alt="modern webistes, high qulity, quality code">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     ADVANTAGES                     -->
+    <div class="advantages text-center pt-5 justify-content-around">
+        <div class="container p-5 my-auto">
+            <div data-aos="zoom-in">
+                <p style="color: #ff4f5a; font-size: 22px; margin-bottom: 0px !important;">Zalety stron internetowych</p>
+                <h1>Dlaczego warto założyć własną witrynę?</h1>
+            </div>
+
+            <div class="row">
+                <div class="advantages-left col-md-5 my-auto">
+                    <div data-aos="zoom-in"><img src="imgs/advantages.jpg" width="100%" alt="zalety własnej strony internetowej, avgantages of webiste, zalety reklamy w internecie, reklama" ;></div>
+                </div>
+
+                <div class="advantages-right col-md-7 p-5 my-auto text-left" style="font-size: 22px; opacity: 0.8;">
+                    <div data-aos="flip-left">
+                        <p class="my-auto pt-3" style="margin-bottom: 5px !important;">● Łatwy dostęp do informacji dla Twoich klientów</p>
+                    </div>
+                    <div data-aos="flip-left" data-aos-delay="300">
+                        <p style="margin-bottom: 5px !important;">● Kreowanie wizerunku w internecie</p>
+                    </div>
+                    <div data-aos="flip-left" data-aos-delay="600">
+                        <p style="margin-bottom: 5px !important;">● Lepszy kontakt z klientem</p>
+                    </div>
+                    <div data-aos="flip-left" data-aos-delay="900">
+                        <p style="margin-bottom: 5px !important;">● Nowoczesny kanał sprzedaży</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     RESPONSIVE                     -->
+    <div class="responsive py-5">
+        <div class="container">
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <p class="text-center" style="color: #ff4f5a; font-size: 22px; margin-bottom: 0px !important;">Wsparcie biblioteki Bootstrap 4</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <h1 class="text-center pb-3">Czym jest responsywność?</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="responsive-text col-md-5 my-auto">
+                    <div data-aos="zoom-in" data-aos-delay="300">
+                        <p style="opacity: 0.8; font-size: 18px;">Jest to technologia, która jest niezwykle istotna przy projektowaniu nowoczesnych witryn. Dzięki niej Twoja witryna jest prawidłowo wyświetlana niezależnie od wielkości, szerokości urządzenia, z którego korzysta potencjalny odbiorca.</p>
+                    </div>
+                </div>
+                <div class="responsive-img col-md-7 my-auto">
+                    <div data-aos="zoom-in" data-aos-delay="400"><img src="imgs/responsive.png" width="90%" alt="Responsywne strony, responsive website, high quality websites, nowoczesne strony" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     ADVANTAGES US                     -->
+    <div class="advantages_us py-5 text-center">
+        <div class="container">
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <p style="margin-bottom: 0px !important; font-size: 22px; color: #ff4f5a;">Zalety współpracy ze mną</p>
+                <h1 class="pb-5">Co mnie charakteryzuję?</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-6 first-item">
+                    <img src="imgs/advantages-index/code.svg" width="25%" alt="wysoka jakość kodu, code quality">
+                    <div data-aos="zoom-in" data-aos-delay="200">
+                        <p class="pt-2">Optymalny i czysty kod zapewnia najwyższą jakość funkcjonowania witryny</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 second-item">
+                    <img src="imgs/advantages-index/support.svg" width="25%" alt="pełne wsparcie, best support, website support, client support">
+                    <div data-aos="zoom-in" data-aos-delay="400">
+                        <p class="pt-2">Pełne wsparcie również po zakończeniu projektu przy edycji witryny</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 third-item">
+                    <img src="imgs/advantages-index/award.svg" width="25%" alt="pozytywne opinie klientów, best opinions, good recents">
+                    <div data-aos="zoom-in" data-aos-delay="600">
+                        <p class="pt-2">Gwarantowana satysfakcja lub całkowity zwrot pieniędzy</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 fourth-item">
+                    <img src="imgs/advantages-index/time.svg" width="25%" alt="szybkość wykonania, speed of execution">
+                    <div data-aos="zoom-in" data-aos-delay="800">
+                        <p class="pt-2">Projekt wykonywany jest zgodnie z terminem ustalonym przez klienta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                     FACEBOOK-SECTION                     -->
+    <section id="facebook" class="py-5">
+        <div class="container text-center py-5">
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <p style="margin-bottom: 0px !important; font-size: 22px; color: #ff4f5a;">Moja działalność na facebook</p>
+                <h1 class="pb-5">Dlaczego warto mnie obserwować?</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="facebook-left col-md-7 my-auto px-4">
+                    <div data-aos="zoom-in" data-aos-delay="200">
+                        <p class="text-left"><span style="color: #ff4f5a;">●</span> Poznasz system działania stron internetowych</p>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="400">
+                        <p class="text-left"><span style="color: #ff4f5a;">●</span> Zobaczysz zaplecze projektowania witryn</p>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="600">
+                        <p class="text-left"><span style="color: #ff4f5a;">●</span> Możliwość uczestniczenia w konkursach i promocjach</p>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="800"><a href="https://www.facebook.com/rszczepanski.web/" target="_blank" class="btn header-button mt-4">Odwiedź mojego fb!</a></div>
+                </div>
+                <div class="facebook-right col-md-5 my-auto">
+                    <div data-aos="zoom-in" data-aos-delay="600"><img src="imgs/fb.svg" width="100%" alt="strona na facebook, facebook website, social media, jak pozyskać klientów, jak tworzyć strony" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--                     LAST PROJECT                     -->
+    <div class="last-project py-5">
+        <div class="container">
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <p class="text-center" style="color: #ff4f5a; margin-bottom: 0px !important; font-size: 20px;">Sprawdź nad czym ostatnio pracowałem</p>
+                <h1 class="text-center pb-5">Ostatnio wykonany projekt</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="last-project-img col-lg-6 my-auto order-lg-1 order-2">
+                    <div class="hovereffect">
+                        <div data-aos="zoom-in" data-aos-delay="200"><img src="imgs/carousele/4.jpg" class="justify-content-center" width="100%" alt="ostatni projekt, last project, website project, example site, landing page"></div>
+                        <div class="overlay">
+                            <a class="info" href="last_project.html">Zaplecze projektu (niedostępne)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="last-project-text col-lg-6 my-auto px-5 text-center order-lg-2 order-1">
+                    <div data-aos="zoom-in" data-aos-delay="300">
+                        <p style="margin-bottom: 0px !important; color: #ff4f5a;">TRENER PERSONALNY</p>
+                        <h3 class="pb-3">Strona internetowa dla Krystiana</h3>
+                        <p class="text-left">Stworzyłem stronę internetową w formie portfolio dla trenera personalnego. Strona została napisana przy użyciu języków skyptowych: html, css, js, php w oparciu o bibliotekę bootstrap 4.</p>
+                        <a href="https://www.bestronger.com.pl/" target="_blank" class="mb-2 btn header-button">Zobacz na żywo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--                     CONTACT SECTION                     -->
+
+    <section id="contact-section-scroll">
+        <div class="contact-section pt-5 pb-5 d-flex justify-content-center">
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="contact-section-left py-5 col-md-6 text-black my-auto">
+                        <div data-aos="zoom-in" data-aos-delay="100">
+                            <h1 class="pb-2">Skontaktuj się ze mną!</h1>
+                            <p2 style="opacity: 0.8; color: #ff4f5a;">Skorzystaj z formularza w celu nawiązania kontaktu.</p2>
+                        </div>
+                        <div class="contact-section-left-data-button mt-4">
+                            <div class="row">
+                                <div class="contact-section-admin col-lg-6">
+                                    <div data-aos="zoom-in" data-aos-delay="200">
+                                        <p style="opacity: 0.6; font-size: 12px;">Administratorem danych osobowych jest właściciel domeny rszczepanski.pl. Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane pytanie. Użycie przycisku "wyślij" oznacza
+                                            zatwierdzenie <a href="rules.html" style="color: #ff4f5a">polityki prywatności</a></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="contact-section-data col-lg-6 text-justify">
+                                    <div data-aos="zoom-in" data-aos-delay="400">
+                                        <h5 class="pb-2">Dane kontaktowe:
+                                            <h5>
+                                                <p>
+                                                    <svg width="1.5em" height="1.5em" style="color: #ff4f5a;" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+                          </svg>
+                                                    <span style="font-size: 14px;">kontakt@rszczepanski.pl</span>
+                                                </p>
+                                                <p>
+                                                    <svg width="1.5em" height="1.5em" style="color: #ff4f5a;" viewBox="0 0 16 16" class="bi bi-phone-vibrate" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 3H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM6 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6z" /><path fill-rule="evenodd"d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM1.599 4.058a.5.5 0 0 1 .208.676A6.967 6.967 0 0 0 1 8c0 1.18.292 2.292.807 3.266a.5.5 0 0 1-.884.468A7.968 7.968 0 0 1 0 8c0-1.347.334-2.619.923-3.734a.5.5 0 0 1 .676-.208zm12.802 0a.5.5 0 0 1 .676.208A7.967 7.967 0 0 1 16 8a7.967 7.967 0 0 1-.923 3.734.5.5 0 0 1-.884-.468A6.967 6.967 0 0 0 15 8c0-1.18-.292-2.292-.807-3.266a.5.5 0 0 1 .208-.676zM3.057 5.534a.5.5 0 0 1 .284.648A4.986 4.986 0 0 0 3 8c0 .642.12 1.255.34 1.818a.5.5 0 1 1-.93.364A5.986 5.986 0 0 1 2 8c0-.769.145-1.505.41-2.182a.5.5 0 0 1 .647-.284zm9.886 0a.5.5 0 0 1 .648.284C13.855 6.495 14 7.231 14 8c0 .769-.145 1.505-.41 2.182a.5.5 0 0 1-.93-.364C12.88 9.255 13 8.642 13 8c0-.642-.12-1.255-.34-1.818a.5.5 0 0 1 .283-.648z" /></svg>
+                                                    <span style="font-size: 14px;">+48 733 593 336</span>
+                                                </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-content col-md-6 py-2 text-black">
+                        <form method="post" action="send_form.php" id="contact_form">
+                            <div><label for="name">Imię i nazwisko</label></div>
+                            <div><input type="text" name="name" id="name" class="formField" /></div>
+                            <div><label for="phone">Numer telefonu</label></div>
+                            <div><input type="text" name="phone" id="phone" class="formField" /></div>
+                            <div><label for="email">Adres email</label></div>
+                            <div><input type="text" name="email" id="email" class="formField" /></div>
+                            <div><label for="message">Treść wiadomości</label></div>
+                            <div><textarea name="message" id="message" rows="5" class="formField"></textarea></div>
+                            <div><button id="sendBtn" class="btn header-button">Wyślij</button></div>
+                        </form>
+                        <div id="send_form_status"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--                     STOPKA                     -->
+    <footer class="page-footer font-small pt-2" style="background-color: #ff4f5a">
+        <div class="footer-copyright text-center py-3" style="color: white;"><span style="opacity: 0.6;">© 2020 Copyright:</span>
+            <a href="#">Radosław Szczepański | 2020</a>
+        </div>
+    </footer>
+
+</body>
+
+<!-- Bootstrap JS & JQUERY -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<!-- NAVBAR SCRIPTS -->
+<script>
+    $(document).ready(function() {
+        $(document).click(function(event) {
+            var click = $(event.target);
+            var _open = $(".navbar-collapse").hasClass("show");
+            if (_open === true && !click.hasClass("navbar-toggler")) {
+                $(".navbar-toggler").click();
+            }
+        });
+    });
+    $(document).ready(function() {
+        $(document).scroll(function(event) {
+            var click = $(event.target);
+            var _open = $(".navbar-collapse").hasClass("show");
+            if (_open === true && !click.hasClass("navbar-toggler")) {
+                $(".navbar-toggler").click();
+            }
+        });
+    });
+    $(window).scroll(function() {
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+    });
+</script>
+
+</html>

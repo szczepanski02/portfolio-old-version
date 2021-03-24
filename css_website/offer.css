@@ -1,0 +1,95 @@
+#offer {
+  height: 70vh;
+  background-attachment: fixed;
+}
+
+.about_my_job, .offer {
+  background: url('../imgs/pattern.png');
+}
+
+.section_codes .card {
+  background-color: transparent !important;
+}
+
+h6 {
+  font-size: 26px !important;
+}
+
+.offer .container .row {
+  text-align: left !important;
+}
+
+.discunt-left p {
+  font-size: 22px;
+  margin-bottom: 3px !important;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .about_my_job {
+    margin-top: 30vh !important;
+  }
+
+  .header-content-text {
+    padding-top: 80px;
+  }
+
+  .header-content-photo {
+    padding-top: 70px;
+  }
+
+  .about_my_job .container {
+    padding-top: 0px !important;
+  }
+
+  .section_codes .row {
+    padding-bottom: 0px !important;
+  }
+
+  .offer .container {
+    padding-bottom: 0px !important;
+  }
+
+  .row .contact-link-text {
+    padding-top: 0px !important;
+  }
+
+  .contact-link-text a {
+    margin-top: 20px !important;
+  }
+
+  .row .contact-link-photo {
+    padding-top: 0px !important;
+  }
+
+  .discunt-left {
+    padding-bottom: 60px !important;
+  }
+
+  .discunt-right img {
+    width: 60% !important;
+  }
+
+  p.text-width {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .about_my_job .container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .about_my_job h1 {
+    font-size: 32px;
+  }
+
+  .about_my_job p {
+    font-size: 18px;
+  }
+
+  .offer .offer-header {
+    padding-top: 0px !important;
+  }
+}
